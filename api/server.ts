@@ -1,4 +1,5 @@
 'use strict';
+import appRoutes from "./routes";
 
 const express = require('express');
 const cors = require('cors');
@@ -6,12 +7,17 @@ const fs = require('fs')
 
 // Constants
 const PORT = 8081;
-const HOST = '0.0.0.0';
+const HOST = 'localhost';
 
 // App
 const app = express();
 app.use(cors());
 app.options('*', cors());
 
+app.use(appRoutes)
+
 app.listen(PORT, HOST);
-console.log(`Running on http://${HOST}:${PORT}`);
+const URL = `http://${HOST}:${PORT}`
+console.log(`Running on ${URL} 🎉`);
+
+export { URL }

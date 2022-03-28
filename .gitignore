@@ -1,2 +1,5 @@
 api/node_modules
+api/dist
+
 web-react/node_modules
+web-react/dist
