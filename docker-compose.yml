@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  web-react:
+    build: ./web-react
+    volumes:
+      - "./web-react:/usr/src/app"
+    ports:
+      - "3000:3000"
+  api:
+    build: ./api
+    volumes:
+      - "./api:/usr/src/app"
+    ports:
+      - "8081:8081"

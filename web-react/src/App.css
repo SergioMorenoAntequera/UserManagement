@@ -1,0 +1,35 @@
+.App {
+  background-color: #faf5f0;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-nav{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 64px;
+  flex: 0 0 64px;
+  z-index: 100;
+  background-color: #faf5f0;
+  padding: 0 8px;
+  border: 1px solid #CECECE;
+}
+
+.App-header {
+  display: flex;
+  width: 100%;
+  flex: auto;
+  flex-direction: row;
+  padding: 0 8px;
+  height: 64px;
+  box-sizing: border-box;
+}
+
+.App-header img {
+  height: 26px;
+  padding: 18px 12px;
+}
