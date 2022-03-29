@@ -1,13 +1,9 @@
-import Spinner from '../../components/Spinner/Spinner';
-import UserCard from '../../components/UserCard';
-import { useUsers } from '../../hooks/useUsers';
+import UsersList from '../../containers/UsersList';
 import './App.css';
 
 function App() {
 
-  const { loading, error, users } = useUsers()  
-
-  console.log(users)
+  
 
   return (
     <div className="App">
@@ -16,12 +12,9 @@ function App() {
           <img src="https://www.anthemis.com/wp-content/uploads/2020/11/proportunity-logo.png" alt="logo" />
         </div>
       </nav>
+  
+      <UsersList />
 
-      {error && <p> Error fetching Data </p>}
-      {loading && <Spinner/>}
-      {users.map(user => 
-        <UserCard key={user._id} user={user}/>
-      )}
     </div>
   );
 }
