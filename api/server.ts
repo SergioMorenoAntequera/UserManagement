@@ -6,7 +6,7 @@ const cors = require('cors');
 const fs = require('fs')
 
 // Constants
-const PORT = 8082;
+const PORT = 8080;
 const HOST = 'localhost';
 
 // App
