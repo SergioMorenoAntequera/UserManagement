@@ -10,7 +10,7 @@ usersRouter.get("/", (req:Request, res:Response, next) => {
     
     let limit:number = parseInt(req.query.limit as string) || 20
     let page:number = parseInt(req.query.page as string) || 0
-    let auxWithApplication = req.headers.application as string ?? null
+    let auxWithApplication = req.query.applications as string ?? null
     let withApplication = null
     if(auxWithApplication != null) withApplication = auxWithApplication == 'true'
 
@@ -25,13 +25,12 @@ usersRouter.get("/", (req:Request, res:Response, next) => {
         }
     }
 
-    
     users = users.splice(limit*page, limit)
-    
+
     res.status(200).json({
         data:users,
-        next: `${URL}${req.baseUrl}/?page=${page+1}&limit=${limit}`,
-        prev: `${URL}${req.baseUrl}/?page=${page-1}&limit=${limit}`
+        next: `${URL}${req.baseUrl}/?page=${page+1}&limit=${limit}&applications=${withApplication}`,
+        prev: `${URL}${req.baseUrl}/?page=${page-1}&limit=${limit}&applications=${withApplication}`,
     })
 })
 
