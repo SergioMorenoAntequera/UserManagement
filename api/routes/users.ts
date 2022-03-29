@@ -1,4 +1,5 @@
 import { Request, Response, Router } from "express";
+import User from "../models/User";
 import { URL } from "../server";
 import { readJSONFile } from "../utils/files";
 const fs = require('fs')
